@@ -17,11 +17,25 @@ module Txt
                 end
                 return lines
                 rescue TypeError => e
+                    file = File.open("./Resources/Input.txt")
+                    lines = file.read.split("\n")
+                    lines.each do |x|
+                        x.downcase!
+                        x = x.split(" ")
+                    end
                     puts e
-                    return []
+                    puts "Usando arquivo padrao(Input.txt)"
+                    return lines
                 rescue  IOError => e
+                    file = File.open("./Resources/Input.txt")
+                    lines = file.read.split("\n")
+                    lines.each do |x|
+                        x.downcase!
+                        x = x.split(" ")
+                    end
                     puts e
-                    return []
+                    puts "Usando arquivo padrao(Input.txt)"
+                    return lines
             end
 
         else
